@@ -7,6 +7,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    background-color: #f0f2f5;
 }
 
 .wrapper {
@@ -14,7 +15,7 @@ body {
     padding: 30px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 label {
@@ -24,8 +25,12 @@ label {
     padding-right: 15px;
 }
 
+.password-container {
+    position: relative;
+}
+
 input {
-    width: 320px;
+    width: 100%;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -33,6 +38,12 @@ input {
     padding: 10px;
     margin-bottom: 8px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 .formelement {
@@ -50,11 +61,12 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #submitbutton:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 #errors {
@@ -87,9 +99,18 @@ input {
 
 .toggle-password {
     float: right;
-    margin-right: 10px;
-    position: relative;
+    right: 10px;
+    top: 50%;
+    position: absolute;
     z-index: 2;
     cursor: pointer;
-    font-size: 0.1rem;
+    transform: translateY(50%);
+    font-size: 0.9rem;
+    color: #007bff;
+    transition: color 0.3s ease;
+    /* z-index: 1; */
+}
+
+.toggle-password:hover {
+    color: #0056b3;
 }
