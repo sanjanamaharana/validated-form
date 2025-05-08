@@ -29,25 +29,26 @@ $("#submitbutton").click(function (event) {
 
     // Check for empty fields
     if ($("#email").val() == "") {
-        missingfield += "<p>Email is required.</p>";
+        missingfield += "<p>Enter Email</p>";
     }
     if ($("#phoneno").val() == "") {
-        missingfield += "<p>Phone Number is required.</p>";
+        missingfield += "<p>Enter Phone Number</p>";
     }
     if ($("#password").val() == "") {
-        missingfield += "<p>Password is required.</p>";
+        missingfield += "<p>Enter Password</p>";
     }
 
     // Validate email format
     if (!validateEmail($("#email").val())) {
-        errormessage += "<p>Invalid email format.</p>";
+        errormessage += "<p>Invalid Email Format</p>";
     }
 
     // Validate phone number
-    if (!$.isNumeric($("#phoneno").val())) {
-        errormessage += "<p>Phone Number is not valid.</p>";
-    } else if ($("#phoneno").val().length != 10) {
-        errormessage += "<p>Phone Number must be 10 digits long.</p>";
+    var phoneNumber = $("#phoneno").val();
+    if (!$.isNumeric(phoneNumber)) {
+        errormessage += "<p>Phone Number is not valid. Only digits are allowed.</p>";
+    } else if (phoneNumber.length != 10) {
+        errormessage += "<p>Invalid Phone Number Format (10 digits required)</p>";
     }
 
     // Validate password format
@@ -57,15 +58,23 @@ $("#submitbutton").click(function (event) {
 
     // Check password match
     if ($("#password").val() != $("#cpassword").val()) {
-        errormessage += "<p>Passwords do not match.</p>";
+        errormessage += "<p>Password and Confirm Password do not match</p>";
     }
 
     // Display messages
     if (errormessage == "" && missingfield == "") {
         $("#errors").html("");
-        $("#success").html("<p>You are registered successfully!</p>");
+        $("#success").html("<p>Form submitted successfully !</p>");
     } else {
         $("#success").html("");
         $("#errors").html(errormessage + missingfield);
+    }
+});
+
+// Restrict phone number input to digits only and max length of 10
+$("#phoneno").on("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, ''); // Allow only digits
+    if (this.value.length > 10) {
+        this.value = this.value.slice(0, 10); // Limit to 10 digits
     }
 });
