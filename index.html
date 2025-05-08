@@ -4,42 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form validation</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Form Validation</title>  
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
-    <div id="errors"> </div>
-    <div id="success"> </div>
-
+    <div id="errors"></div>
+    <div id="success"></div>
     <div class="wrapper">
-
         <div class="formelement">
             <label for="email">Email :</label>
             <input type="email" name="email" id="email">
         </div>
-
         <div class="formelement">
             <label for="phoneno">Phone Number :</label>
             <input type="text" name="phoneno" id="phoneno">
         </div>
-
         <div class="formelement">
-            <label for="Password">Password :</label>
-            <input type="password" name="password" id="password">
-            <span class="toggle-password" toggle="#password">Show</span>
+            <label for="password">Password :</label>
+            <div class="password-container">
+                <input type="password" name="password" id="password">
+                <span class="toggle-password" toggle="#password">Show</span>
+            </div>
         </div>
-
         <div class="formelement">
-            <label for="Password">Confirm-Password :</label>
-            <input type="password" name="cpassword" id="cpassword">
-            <span class="toggle-password" toggle="#cpassword">Show</span>
+            <label for="cpassword">Confirm Password :</label>
+            <div class="password-container">
+                <input type="password" name="cpassword" id="cpassword">
+                <span class="toggle-password" toggle="#cpassword">Show</span>
+            </div>
         </div>
-
-        <input type="submit" value="submit" id="submitbutton">
+        <input type="submit" value="Submit" id="submitbutton">
+        <script src="script.js"></script>
     </div>
-
 </body>
 
 </html>
