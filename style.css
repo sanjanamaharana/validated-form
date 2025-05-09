@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 100%;
     display: flex;
     flex-direction: column;
@@ -7,24 +7,23 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-image: url("https://img.freepik.com/free-vector/watercolor-abstract-floral-background_52683-134424.jpg?semt=ais_hybrid&w=740");
+    background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .wrapper {
-    width: 550px;
+    width: 88%;
+    max-width: 550px;
     padding: 30px;
-    background: rgba(239, 230, 175, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
 label {
-    width: 200px;
+    width: 100%;
     top: 12px;
-    text-align: right;
+    text-align: left;
     padding-right: 15px;
     font-weight: 600;
 }
@@ -43,7 +42,8 @@ input {
     margin-bottom: 8px;
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #f8f8f7dc;
+    background-color: #F7F7F5;
+    color: #2E3D2F;
 }
 
 input:focus {
@@ -63,17 +63,18 @@ input:focus {
     margin-left: 200px;
     padding: 12px 25px;
     font-size: 1.1rem;
-    background-color: #007bff;
+    background-color: #1368c3;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 #submitbutton:hover {
-    background-color: #0f5aaa;
+    background-color: #075cb7;
     transform: translateY(-2px);
     box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
 }
@@ -84,8 +85,9 @@ input:focus {
 }
 
 #errors {
-    color: #D32F2F;
-    font-size: 0.9rem;
+    color: #B33A3A;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(197, 189, 189, 0.7);
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -97,10 +99,11 @@ input:focus {
 }
 
 #success {
-    color: #1B5E20;
+    color: #3A7734;
     font-size: 0.9rem;
     margin-bottom: 10px;
     padding: 10px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
     width: 100%;
     text-align: center;
     box-sizing: border-box;
@@ -125,4 +128,22 @@ input:focus {
 
 .toggle-password:hover {
     color: #1368c3;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    label {
+        width: 100%;
+        text-align: left;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #submitbutton {
+        margin-left: 0;
+        width: 100%;
+    }
 }
