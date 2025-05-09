@@ -1,7 +1,7 @@
 // Function to validate password format
 function isValidPassword(password) {
     // Minimum 8 characters, at least one uppercase, one lowercase, and one number
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
     return passwordRegex.test(password);
 }
 
